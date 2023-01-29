@@ -14,13 +14,13 @@ Install requirements above.
 add the following line to your project's `manifest.json`:
 
 ```
-"com.brennanhatton.untiytools": "git+https://github.com/bh679/Unity-Tools.git"
+"com.brennanhatton.discord": "git+https://github.com/bh679/Unity-Discord-Webhook-Tools.git"
 ```
 
 of 
 Windows -> Package Manager -> '+' -> `add package from git URL...` ->
 ```
-https://github.com/bh679/Unity-Tools.git
+https://github.com/bh679/Unity-Discord-Webhook-Tools.git
 ```
 
 Join the [Discord](https://discord.gg/VC8gZ2GNHs "Join Discord server") server to leave feedback or get support.
