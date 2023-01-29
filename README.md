@@ -30,6 +30,7 @@ Join the [Discord](https://discord.gg/VC8gZ2GNHs "Join Discord server") server t
 
 ## Using
 How to make a webhook link:
+
 1 - Make new channels for the webhooks (a dev one and default)
 
 2 - Make the webbooks that point to each
