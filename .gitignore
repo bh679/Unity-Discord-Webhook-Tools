@@ -1,2 +1,2 @@
 #Dont save files with links to webhooks
-/Runtime/PRIVATE/*
+/Runtime/PRIVATE/*.txt
