@@ -1,7 +1,7 @@
 {
 	"name": "com.brennanhatton.discord",
 	"description": "PUN2 Discorcd Webhooks",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"unity": "2021.3",
 	"displayName": "Brennan Hattons PUN Discord Webhooks",
 	"author": 
