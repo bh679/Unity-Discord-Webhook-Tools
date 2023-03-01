@@ -3,5 +3,5 @@
 /Runtime/PRIVATE/*.txt
 *webhook.txt
 
-/Runtime/PUN/*
-/Runtime/UnityTools/*
+/Runtime/PUN*
+/Runtime/UnityTools*
