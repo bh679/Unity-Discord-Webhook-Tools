@@ -1,10 +1,10 @@
 {
 	"name": "com.brennanhatton.discord",
-	"description": "PUN2 Discorcd Webhooks",
-	"version": "1.0.2",
+	"description": "Discorcd Webhooks",
+	"version": "1.1.0",
 	"unity": "2021.3",
   	"unityRelease": "16f1",
-	"displayName": "Brennan Hattons PUN Discord Webhooks",
+	"displayName": "Brennan Hattons Discord Webhooks",
   	"documentationUrl": "https://github.com/bh679/Unity-Discord-Webhook-Tools",
   	"licensesUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
 	"author": 
