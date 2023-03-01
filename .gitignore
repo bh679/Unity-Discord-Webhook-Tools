@@ -2,3 +2,5 @@
 
 /Runtime/PRIVATE/*.txt
 *webhook.txt
+
+/Runtime/PUN/*
