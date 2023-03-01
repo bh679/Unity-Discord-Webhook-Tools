@@ -7,7 +7,7 @@ namespace BrennanHatton.Discord
 {
 	public class SceneNameToDiscordLog : MonoBehaviour
     {
-	    void Awake()
+	    void OnEnable()
 	    {
 		    DiscordLogManager.Instance.AddToStringAtEnd(GetSceneName);
 	    }
