@@ -35,7 +35,7 @@ namespace BrennanHatton.Discord
 			string ret = "";
 			for(int  i = 0; i < externalStringsForEnd.Count; i++)
 			{
-				ret += externalStringsForEnd[i];
+				ret += externalStringsForEnd[i]();
 			}
 			
 			return ret;
