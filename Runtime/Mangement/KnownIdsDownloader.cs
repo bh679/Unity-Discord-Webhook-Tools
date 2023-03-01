@@ -16,7 +16,7 @@ namespace BrennanHatton.Discord
 	
 	public class KnownIdsDownloader : MonoBehaviour
 	{
-		public ClassDiscordConnection idManager;
+		public DiscordLogManager idManager;
 		public string json;
 		public JsonDataType jsonData;
 		
@@ -27,7 +27,7 @@ namespace BrennanHatton.Discord
 		
 		void Reset()
 		{
-			idManager = this.GetComponent<ClassDiscordConnection>();
+			idManager = this.GetComponent<DiscordLogManager>();
 			
 			jsonData = new JsonDataType();
 			jsonData.ids = idManager.ids.ToArray();
