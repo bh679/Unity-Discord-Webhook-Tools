@@ -4,4 +4,4 @@
 *webhook.txt
 
 /Runtime/PUN/*
-/Runtime/DiscordUnityTools/*
+#/Runtime/DiscordUnityTools/*
