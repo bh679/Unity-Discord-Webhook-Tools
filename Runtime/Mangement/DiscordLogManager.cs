@@ -19,7 +19,7 @@ namespace BrennanHatton.Discord
 		public bool debug = true;
 	}
 	
-	public class ClassDiscordConnection : MonoBehaviour
+	public class DiscordLogManager : MonoBehaviour
 	{
 		//Public and private webhooks
 		public DiscordWebhook webhook, debugWebHook;
@@ -42,7 +42,7 @@ namespace BrennanHatton.Discord
 		}
 		
 		//Singlton
-		public static ClassDiscordConnection Instance { get; private set; }
+		public static DiscordLogManager Instance { get; private set; }
 		private void Awake() 
 		{ 
 			// If there is an instance, and it's not me, delete myself.
