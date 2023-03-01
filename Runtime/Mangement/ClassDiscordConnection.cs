@@ -6,11 +6,11 @@ Sends formatted message to discord webhooks with device info.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
 
 namespace BrennanHatton.Discord
 {
+	
+	public delegate string GetString();
 
 	[System.Serializable]
 	public class KnownIds
@@ -19,11 +19,27 @@ namespace BrennanHatton.Discord
 		public bool debug = true;
 	}
 	
-	public class ClassDiscordConnection : MonoBehaviourPunCallbacks
+	public class ClassDiscordConnection : MonoBehaviour
 	{
 		//Public and private webhooks
 		public DiscordWebhook webhook, debugWebHook;
-		bool connected = false;
+		
+		List<GetString> externalStringsForEnd = new List<GetString>();
+		public void AddToStringAtEnd(GetString stringFunc)
+		{
+			externalStringsForEnd.Add(stringFunc);
+		}
+		
+		public string GetAllExternalStringsAtEnd()
+		{
+			string ret = "";
+			for(int  i = 0; i < externalStringsForEnd.Count; i++)
+			{
+				ret += externalStringsForEnd[i];
+			}
+			
+			return ret;
+		}
 		
 		//Singlton
 		public static ClassDiscordConnection Instance { get; private set; }
@@ -51,8 +67,9 @@ namespace BrennanHatton.Discord
 		}
 		
 		int id = -2;
+		public int Id { get; set; }
 		
-		public string USER_STR = "Learner", JOINED_MESSAGE = "joined the metaverse.";
+		public string USER_STR = "Learner";
 		
 		void Start()
 		{
@@ -95,43 +112,9 @@ namespace BrennanHatton.Discord
 		{
 			//if device info is saved, and marked as debug device
 			if(id >= 0 && ids[id].debug)
-				debugWebHook.SendMessage((raw?"":GetName() + " ") + message + (raw?"":deviceData + GetClassData()));
+				debugWebHook.SendMessage((raw?"":GetName() + " ") + message + (raw?"":deviceData + GetAllExternalStringsAtEnd()/*GetClassData()*/));
 			else //send as public hook
-				webhook.SendMessage((raw?"":GetName() + " ") + message + (raw?"":deviceData + GetClassData()));
-		}
-		
-		//get information about current players
-		public string GetClassData()
-		{
-			if(connected == false)
-				return "";
-				
-			string returnData = "```"+PhotonNetwork.PlayerList.Length.ToString() + " "+USER_STR+"s:";
-			
-			for(int i = 0 ; i < PhotonNetwork.PlayerList.Length; i++)
-			{
-					
-				returnData += "\n"+PhotonNetwork.PlayerList[i].ActorNumber
-					+" : "+PhotonNetwork.PlayerList[i].NickName;
-					
-				if(PhotonNetwork.PlayerList[i].IsLocal)
-					returnData += " - id:" + SystemInfo.deviceUniqueIdentifier;
-			}
-			
-			return returnData+"```";
-		}
-		
-		public override void OnJoinedRoom()
-		{
-			base.OnJoinedRoom();
-			
-			connected = true;
-			
-			if(id == -2)
-				id = GetId(SystemInfo.deviceUniqueIdentifier);
-			
-			SendMessage(JOINED_MESSAGE);
-			
+				webhook.SendMessage((raw?"":GetName() + " ") + message + (raw?"":deviceData + GetAllExternalStringsAtEnd()/*GetClassData()*/));
 		}
 		
 	}
