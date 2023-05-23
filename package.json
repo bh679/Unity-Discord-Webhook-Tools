@@ -1,7 +1,7 @@
 {
 	"name": "com.brennanhatton.discord",
 	"description": "Discorcd Webhooks",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"unity": "2021.3",
   	"unityRelease": "16f1",
 	"displayName": "Brennan Hattons Discord Webhooks",
