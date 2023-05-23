@@ -92,6 +92,9 @@ namespace BrennanHatton.Discord
 		//get name from known ids
 		public string GetName()
 		{
+			if(string.IsNullOrEmpty(USER_STR))
+				return "";
+				
 			if(id <= -1)
 				return "A "+USER_STR;
 			else if(ids.Count > 0)
