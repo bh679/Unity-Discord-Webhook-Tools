@@ -5,7 +5,7 @@ Discord Webhooks for PUN2.
 ## Requirements
 Unity (most recent tested on 2021.3.16f1) <br />
 
-#Intergrations
+# Intergrations
 DiscordPUN.Unitypackage - [PUN2](https://assetstore.unity.com/packages/tools/network/pun-2-free-119922) (free)  <br />
 DiscordUnityTools.Unitypackage <br />
 GPTToDiscord.UnityPackage <br />
